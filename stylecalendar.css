@@ -1,0 +1,243 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+h3 {
+	margin: 5px 0;
+	text-align: center;
+}
+
+#calendar {
+	max-width: 1414px;
+	height: calc(100% - 35px);
+	margin: 0 auto;
+	border: 1px solid #BEBEBE;
+	color: #fff;
+}
+#calendar::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#calendar .day {
+	float: left;
+	width: 200px;
+	/*height: 150px;*/
+	height: calc(20% - 2px);
+	text-align: center;
+	background-color: #40C3B2;
+	border: 1px solid #4296FD;
+	overflow-y: auto;
+}
+#calendar .day::before {
+	content: attr(data-day);
+	display: block;
+	margin: 5px 0 0 10px;
+	text-align: left;
+}
+#calendar .today {
+	background-color: #3166BE;
+}
+#calendar .active {
+	border: 1px solid #fff;
+	box-shadow: inset 0px 0px 2px 1px #fff;
+}
+
+/* *** ***** style .div children ***** *** */
+#calendar .day .event,
+#calendar .day .task {
+	display: block;
+	width: calc(100% - 14px);
+	height: 25px;
+	margin: 5px auto 0;
+	padding: 0 5px;
+	line-height: 25px;
+	text-align: left;
+	background-color: #8798A8;
+	cursor: pointer;
+}
+#calendar .day .task.check {
+	text-decoration: line-through;
+	color: #000;
+}
+#calendar .day .task input {
+	margin: 0;
+}
+#calendar .day .task span {
+	margin-left: 5px;
+}
+#calendar .day .task div {
+	display: none;
+}
+/* *** ***** end style .div children ***** *** */
+
+/* *** ***** #tooltip ***** *** */
+#tooltip > input {
+	display: none;
+}
+#tooltip {
+	position: absolute;
+	top: 315px;
+	left: 800px;
+	display: none;
+	border: 2px solid #8798A8;
+	background-color: #fff;
+	color: #000;
+	transform: translate(-50%, -100%);
+}
+#tooltip.beforel:before,
+#tooltip.beforer:before,
+#tooltip.before:before,
+#tooltip.afterl:after,
+#tooltip.afterr:after,
+#tooltip.after:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+}
+#tooltip.beforel:before {
+	top: -10px;
+	left: calc(25% - 10px);
+	border-bottom: 10px solid #fff;
+}
+#tooltip.beforer:before {
+	top: -10px;
+	left: calc(75% - 10px);
+	border-bottom: 10px solid #fff;
+}
+#tooltip.before:before {
+	top: -10px;
+	left: calc(50% - 10px);
+	border-bottom: 10px solid #fff;
+}
+#tooltip.afterl:after {
+	bottom: -10px;
+	left: calc(25% - 10px);
+	border-top: 10px solid #fff;
+}
+#tooltip.afterr:after {
+	bottom: -10px;
+	left: calc(75% - 10px);
+	border-top: 10px solid #fff;
+}
+#tooltip.after:after {
+	bottom: -10px;
+	left: calc(50% - 10px);
+	border-top: 10px solid #fff;
+}
+#tooltip p {
+	margin: 0;
+}
+#tooltip .calevent > span,
+#tooltip .caltask > span {
+	position: relative;
+	top: -1px;
+	color: #000;
+}
+#tooltip label[for="calevent"],
+#tooltip label[for="caltask"] {
+	font-weight: bold;
+	color: #15c;
+}
+#tooltip label[for="calevent"]:hover,
+#tooltip label[for="caltask"]:hover {
+	text-decoration: underline;
+}
+#tooltip .calevent,
+#tooltip .caltask {
+	display: none;
+	width: 360px;
+	height: 141px;
+	padding: 10px 20px;
+}
+#tooltip .caltask {
+	height: 200px;
+}
+#calevent:checked ~ .calevent,
+#caltask:checked ~ .caltask {
+	display: block;
+}
+#calevent:checked ~ .calevent label[for="calevent"],
+#caltask:checked ~ .calevent label[for="caltask"],
+#calevent:checked ~ .caltask label[for="calevent"],
+#caltask:checked ~ .caltask label[for="caltask"] {
+	color: #000;
+	text-decoration: none;
+}
+#tooltip .closetooltip {
+	font-size: 20px;
+	float: right;
+	padding: 0 5px;
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #D3D3D3;
+	outline: none;
+}
+#tooltip .calevent > p {
+	margin: 10px 0;
+}
+#tooltip .calevent p span {
+	margin-left: 12px;
+}
+#tooltip .calevent label input {
+	width: 210px;
+	margin-left: 45px;
+}
+#tooltip .calevent label p {
+	font-size: 11px;
+	margin-left: 136px;
+}
+
+#btnevent,
+#btntask,
+#btneventdel,
+#btntaskdel {
+	height: 30px;
+	margin: 22px 0 0;
+	background-color: #F8F8F8;
+	border: 1px solid #8798A8;
+	color: #2C2C2C;
+}
+#btnevent:hover,
+#btntask:hover,
+#btneventdel:hover,
+#btntaskdel:hover {
+	color: #000;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,0.5);
+}
+#btneventdel,
+#btntaskdel {
+	float: right;
+}
+#tooltip .caltask .labmar {
+	display: inline-block;
+	margin: 10px 0;
+}
+#tooltip .caltask .labmar input {
+	width: 225px;
+	margin-left: 77px;
+}
+#tooltip .caltask textarea {
+	height: 60px;
+	width: 223px;
+	margin-left: 68px;
+	vertical-align: top;
+	resize: none;
+}
+#btntask,
+#btntaskdel {
+	margin-top: 0;
+}
+/* *** ***** end #tooltip ***** *** */
+
+

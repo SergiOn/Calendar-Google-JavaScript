@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calendar</title>
+	<link rel="stylesheet" href="stylecalendar.css">
+</head>
+<body>
+	
+	<h3>JavaScript Calendar homework</h3>
+
+	<div id="calendar">
+	<!-- * *** ***** Calendar ***** *** * -->
+		<div class="day day1" data-day="1"></div>
+		<div class="day day2" data-day="2"></div>
+		<div class="day day3" data-day="3"></div>
+		<div class="day day4" data-day="4"></div>
+		<div class="day day5" data-day="5"></div>
+		<div class="day day6" data-day="6"></div>
+		<div class="day day7" data-day="7"></div>
+		<div class="day day8" data-day="8"></div>
+		<div class="day day9" data-day="9"></div>
+		<div class="day day10" data-day="10"></div>
+		<div class="day day11" data-day="11"></div>
+		<div class="day day12" data-day="12"></div>
+		<div class="day day13" data-day="13"></div>
+		<div class="day day14" data-day="14"></div>
+		<div class="day day15" data-day="15"></div>
+		<div class="day day16" data-day="16"></div>
+		<div class="day day17" data-day="17">
+			<div class="event">555</div>
+			<div class="task">
+				<input type="checkbox" value="1"><span>Задача</span>
+				<div>Заметка textarea</div>
+			</div>
+			<div class="event">555</div>
+			<div class="task">
+				<input type="checkbox" value="2"><span>Задача</span>
+				<div>Заметка textarea</div>
+			</div>
+			<div class="event">555</div>
+			<div class="task">
+				<input type="checkbox" value="3"><span>Задача</span>
+				<div>Заметка textarea</div>
+			</div>
+			<div class="event">555</div>
+			<div class="task">
+				<input type="checkbox" value="4"><span>Задача</span>
+				<div>Заметка textarea</div>
+			</div>
+			<div class="event">555</div>
+			<div class="task">
+				<input type="checkbox" value="5"><span>Задача</span>
+				<div>Заметка textarea</div>
+			</div>
+		</div>
+		<div class="day day18" data-day="18"></div>
+		<div class="day day19" data-day="19"></div>
+		<div class="day day20" data-day="20"></div>
+		<div class="day day21" data-day="21"></div>
+		<div class="day day22" data-day="22"></div>
+		<div class="day day23" data-day="23"></div>
+		<div class="day day24" data-day="24"></div>
+		<div class="day day25" data-day="25"></div>
+		<div class="day day26" data-day="26"></div>
+		<div class="day day27" data-day="27"></div>
+		<div class="day day28" data-day="28"></div>
+		<div class="day day29" data-day="29"></div>
+		<div class="day day30" data-day="30"></div>
+		<div class="day day31" data-day="31"></div>
+		<!-- * *** ***** end Calendar ***** *** * -->
+
+	<!-- * *** ***** Tooltop ***** *** * -->
+		<div id="tooltip" class="after">
+			<input type="radio" name="calchoice" id="calevent" checked>
+			<input type="radio" name="calchoice" id="caltask" >
+
+			<div class="calevent">
+				<label for="calevent">Мероприятие</label>
+				<span>|</span>
+				<label for="caltask">Задача</label>
+				<input type="button" value="x" class="closetooltip"><br>
+				<p>Время проведения: <span class="thisday">вт, 16 февраля</span></p>
+				<label>Мероприятие: 
+					<input type="text">
+					<p>например, "Ужин в кафе "Ностальжи" в 19:00"</p>
+				</label>
+				<input type="button" value="Создать мероприятие" id="btnevent">
+				<input type="button" value="Удалить мероприятие" id="btneventdel">
+			</div>
+			
+			<div class="caltask">
+				<label for="calevent">Мероприятие</label>
+				<span>|</span>
+				<label for="caltask">Задача</label>
+				<input type="button" value="x" class="closetooltip"><br>
+				<label class="labmar">Задача: 
+					<input type="text">
+				</label><br>
+				<p>Срок выполнения: <span class="thisday">ср, 17 февраля</span></p>
+				<label class="labmar">Заметка:
+					<textarea></textarea>
+				</label><br>
+				<input type="button" value="Создать задачу" id="btntask">
+				<input type="button" value="Удалить задачу" id="btntaskdel">
+			</div>
+		</div>
+		<!-- * *** ***** end Tooltop ***** *** * -->
+	</div>
+
+	<script src="jscalendar.js"></script>
+</body>
+</html>
