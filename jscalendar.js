@@ -138,7 +138,7 @@ calendar.addEventListener("click", function(event) {
 	}
 	
 	var monthDays = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
-	var monthName = ["января", "февраля", "марта", "апреля", "мая"];
+	var monthName = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля"];
 	if (event.target.classList.contains("day")) {
 		var allDate = new Date(date.getFullYear(), date.getMonth(), event.target.dataset.day);
 
@@ -188,7 +188,7 @@ btnevent.onclick = function(event) {
 			document.querySelector(".calevent label input").setAttribute("readonly", "");
 			btnevent.value = "Изменить мероприятие";
 			thisEvent.innerHTML = document.querySelector(".calevent label input").value;
-			tooltip.style.display = "";
+			// tooltip.style.display = "";
 		}
 	} else {
 		if (!document.querySelector(".calevent label input").value) {
@@ -239,7 +239,7 @@ btntask.onclick = function(event) {
 		createTask.appendChild(createSpan);
 		createTask.appendChild(createDiv);
 		document.querySelector(".active").appendChild(createTask);
-		tooltip.style.display = "";
+		// tooltip.style.display = "";
 		document.querySelector(".active").classList.remove("active");
 	}
 }
